@@ -1,4 +1,4 @@
-# Pronto.ai Take home Assignment
+# Pronto.ai Take Home Assignment
 
 ## Problem Requirements
 
