@@ -25,9 +25,9 @@ class AnalyseRepo:
 
         # Check to see whether we have commits on this repository - necessary for answers to part c, part d.
         if not self.commits_available():
-            raise ValueError("No commits on specified git repository.")
+            raise ValueError("No commits available on specified git repository.")
 
-    def commits_available(self):
+    def commits_available(self) -> bool:
         '''
         - Returns true if repository has > 0 commits.
         :return: bool
@@ -46,7 +46,6 @@ class AnalyseRepo:
             return False
 
     def get_active_branch(self) -> str:
-        # Test this out by creating a new branch
         '''
         - Returns name of the active git branch
         :return: str
@@ -55,8 +54,8 @@ class AnalyseRepo:
 
     def check_for_local_changes(self) -> bool:
         '''
-        - Checks for repository files that have been modified.
-        - This does NOT check for non-repository / untracked files.
+        - Checks for repository files that have been modified but not staged.
+        - Check README for specifics.
         :return: bool
         '''
         diff_list = self.local_repo.git.diff(name_only=True)
